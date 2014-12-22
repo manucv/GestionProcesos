@@ -1,0 +1,86 @@
+<!-- /section:custom/content-slider -->
+<div id="top-menu" class="modal aside" data-fixed="true"
+	data-placement="top" data-background="true" data-backdrop="invisible"
+	tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body container">
+				<div class="row hidden-xs">
+					<div class="col-sm-3 col-sm-offset-1 white">
+						<h3 class="lighter">M&oacute;dulos del Sistema</h3>
+						Seleccione el m&oacute;dulo que desea ejecutar
+					</div>
+
+					<div class="col-sm-7 text-center line-height-2">
+						<a class="btn btn-app btn-danger no-radius"
+							href="<?php echo $this->url('auditorias', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-pencil-square-o bigger-230"></i>
+							Auditor&iacute;a
+						</a> &nbsp; &nbsp; <a class="btn btn-info btn-app no-radius"
+							href="<?php echo $this->url('mejoras', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-cog bigger-230"></i> Mejoras
+						</a> &nbsp; &nbsp; <a class="btn btn-app btn-warning no-radius"
+							href="<?php echo $this->url('procesos', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print bigger-230"></i> Procesos
+						</a> &nbsp; &nbsp; <a class="btn btn-app btn-success no-radius"
+							href="<?php echo $this->url('recursos', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print bigger-230"></i> RRHH
+						</a> &nbsp; &nbsp; <a class="btn btn-app btn-Default no-radius"
+							href="<?php echo $this->url('usuarios', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print bigger-230"></i> Usuarios
+						</a>
+					</div>
+				</div>
+				
+				<!-- MOBILE VIEW -->
+				<div class="row hidden-sm hidden-md hidden-lg">
+					<div class="white text-center">
+						<h3 class="">M&oacute;dulos del Sistema</h3>
+					</div>
+                </div>
+                <div class="row hidden-sm hidden-md hidden-lg">
+					<div class="text-center line-height-2">
+						<a class="btn btn-app btn-danger no-radius btn-xs" style="width: 17% !important;"
+							href="<?php echo $this->url('auditorias', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-pencil-square-o"></i>
+							<span style="font-size: 10px;">Auditor&iacute;a</span>
+						</a>
+						
+						<a class="btn btn-info btn-app no-radius btn-xs" style="width: 17% !important;"
+							href="<?php echo $this->url('mejoras', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-cog"></i> 
+							<span style="font-size: 10px;">Mejoras</span>
+						</a>
+						
+						<a class="btn btn-app btn-warning no-radius btn-xs" style="width: 17% !important;"
+							href="<?php echo $this->url('procesos', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print"></i> 
+							<span style="font-size: 10px;">Procesos</span>
+						</a>
+						
+						<a class="btn btn-app btn-success no-radius btn-xs" style="width: 17% !important;"
+							href="<?php echo $this->url('recursos', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print"></i> 
+							<span style="font-size: 10px;">RRHH</span>
+						</a>
+						
+						<a class="btn btn-app btn-Default no-radius btn-xs" style="width: 17% !important;"
+							href="<?php echo $this->url('usuarios', array('controller' => 'index', 'action' => 'index'))?>">
+							<i class="ace-icon fa fa-print"></i> 
+							<span style="font-size: 10px;">Usuarios</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+
+		<button
+			class="btn btn-inverse btn-app btn-xs ace-settings-btn aside-trigger"
+			data-target="#top-menu" data-toggle="modal" type="button">
+			<i data-icon1="fa-chevron-down" data-icon2="fa-chevron-up"
+				class="ace-icon fa fa-chevron-down bigger-110 icon-only"></i>
+		</button>
+	</div>
+	<!-- /.modal-dialog -->
+</div>

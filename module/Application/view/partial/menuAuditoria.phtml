@@ -1,0 +1,79 @@
+<!-- #section:basics/sidebar -->
+<div id="sidebar" class="sidebar responsive sidebar-fixed">
+	<?php echo $this->partial('partial/modulos')?>
+
+	<ul class="nav nav-list">
+		<li class="active"><a href="<?php echo $this->url('auditorias', array('controller' => 'index'))?>"> <i
+				class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+					Inicio </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-desktop"></i> <span class="menu-text"> Lista
+					de Verificaci&oacute;n </span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'listaverificacion', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Lista de
+						Verificaci&oacute;n
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'tipopregunta', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Tipo Pregunta
+				</a> <b class="arrow"></b></li>
+
+			</ul></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text"> Programa
+			</span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'programa', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Programa
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'estadoprograma', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Estado Programa
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'estadoplan', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Estado Plan
+				</a> <b class="arrow"></b></li>
+			</ul></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text"> Plan </span>
+				<b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'plan', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Plan
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'estadoactividad', 'action' => 'listado'))?>"> <i
+						class="menu-icon fa fa-caret-right"></i> Estado Actividad
+				</a> <b class="arrow"></b></li>
+			</ul></li>
+
+		<li class=""><a href="<?php echo $this->url('auditorias', array('controller' => 'informes', 'action' => 'listado'))?>"> <i class="menu-icon fa fa-list"></i> <span
+				class="menu-text"> Informes </span>
+		</a> <b class="arrow"></b></li>
+	</ul>
+	<!-- /.nav-list -->
+
+	<!-- #section:basics/sidebar.layout.minimize -->
+	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+		<i class="ace-icon fa fa-angle-double-left"
+			data-icon1="ace-icon fa fa-angle-double-left"
+			data-icon2="ace-icon fa fa-angle-double-right"></i>
+	</div>
+
+	<!-- /section:basics/sidebar.layout.minimize -->
+	<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+</div>

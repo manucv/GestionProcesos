@@ -1,0 +1,65 @@
+<div class="page-header">
+	<h1>Listado de Competencias</h1>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="table-header-borde">&nbsp;</div>
+		<div>
+			<table id="dynamic-table"
+				class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th class="opciones-grid col-xs-3 col-lg-1"><a
+							href="<?php echo $this->url('recursos', array('controller' => 'departamentos', 'action'=>'ingresar'));?>"
+							class="btn btn-sm btn-primary"> <i class="fa fa-plus-circle"></i>
+								<span class="hidden-xs">Nuevo</span>
+						</a></th>
+						<th class="col-lg-1">Tipo</th>
+						<th class="col-lg-2">Nombre</th>
+						<th class="col-lg-3">Concepto Resumido</th>
+						<th>Concepto Amplio</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php
+    foreach ($this->competencias as $competencias) :
+        ?>
+                 <tr>
+						<td class="iconos-ejecucion-grid"><a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'departamentos', 'action' => 'editar', 'id' => $competencias->getCom_id()))?>"><i
+								class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp; <a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'departamentos', 'action' => 'eliminar', 'id' => $competencias->getCom_id()))?>"
+							onclick="return eliminarRegistro('<?php echo $competencias->getCom_nombre()?>');"><i
+								class="fa fa-trash-o"></i></a>&nbsp;&nbsp;&nbsp; <a
+							class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'departamentos', 'action' => 'eliminar', 'id' => $competencias->getCom_id()))?>"
+							onclick="return eliminarRegistro('<?php echo $competencias->getCom_nombre()?>');"><i
+								class="fa fa-users"></i></a></td>
+						<td><?php echo $competencias->getCom_tipo() == 'G'? 'Gen&eacute;rica' : 'Espec&iacute;fica';?></td>
+						<td><?php echo $this->escapeHtml($competencias->getCom_nombre());?></td>
+						<td><?php echo $this->escapeHtml($competencias->getCom_conce_resumido());?></td>
+						<td><?php
+                            $text = $competencias->getCom_conce_amplio();
+                            if (strlen($text) > 150) {
+                                echo $text = substr($text, 0, 150) . '...';
+                                ?>
+						    <span class="popover-info" data-rel="popover"
+							data-placement="left"
+							data-content="<?php echo $this->escapeHtml($competencias->getCom_conce_amplio());?>"><a
+								style="cursor: pointer;">Leer m&aacute;s</a></span>
+						    <?php
+                            } else {
+                                echo $text;
+                            }
+                            ?> 
+                         </td>
+					</tr>
+                 <?php endforeach; ?>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

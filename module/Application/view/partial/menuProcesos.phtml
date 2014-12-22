@@ -1,0 +1,133 @@
+<!-- #section:basics/sidebar -->
+<div id="sidebar" class="sidebar responsive sidebar-fixed">
+	<?php echo $this->partial('partial/modulos')?>
+
+	<ul class="nav nav-list">
+		<li class="active"><a
+			href="<?php echo $this->url('procesos', array('controller' => 'index')) ?>">
+				<i class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+					Inicio </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'definiciones', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+					Definiciones </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'documentos', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-tachometer"></i> <span class="menu-text">
+					Documentos </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text"> Variables
+			</span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'variables', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Variables
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'valorvariables', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Registrar Valores
+				</a> <b class="arrow"></b></li>
+			</ul></li>
+
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'procesos', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Procesos </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'periodicidad', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Periodicidad </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'empresa', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Empresa </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text">
+					Indicadores </span> <b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'indicadores', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Indicadores
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'calculoindicador', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Calcular Indicadores
+				</a> <b class="arrow"></b></li>
+			</ul></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'normas', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Normas </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a href="#" class="dropdown-toggle"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text"> Planes </span>
+				<b class="arrow fa fa-angle-down"></b>
+		</a> <b class="arrow"></b>
+
+			<ul class="submenu">
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'planes', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Planes
+				</a> <b class="arrow"></b></li>
+
+				<li class=""><a
+					href="<?php echo $this->url('procesos', array('controller' => 'tipoplanes', 'action' => 'listado')) ?>">
+						<i class="menu-icon fa fa-caret-right"></i> Tipo de Planes
+				</a> <b class="arrow"></b></li>
+			</ul></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'recursos', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Recursos </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'registros', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Registros </span>
+		</a> <b class="arrow"></b></li>
+
+		<li class=""><a
+			href="<?php echo $this->url('procesos', array('controller' => 'politicas', 'action' => 'listado')) ?>">
+				<i class="menu-icon fa fa-list-alt"></i> <span class="menu-text">
+					Pol&iacute;ticas </span>
+		</a> <b class="arrow"></b></li>
+
+
+	</ul>
+	<!-- /.nav-list -->
+
+	<!-- #section:basics/sidebar.layout.minimize -->
+	<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+		<i class="ace-icon fa fa-angle-double-left"
+			data-icon1="ace-icon fa fa-angle-double-left"
+			data-icon2="ace-icon fa fa-angle-double-right"></i>
+	</div>
+
+	<!-- /section:basics/sidebar.layout.minimize -->
+	<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+</div>

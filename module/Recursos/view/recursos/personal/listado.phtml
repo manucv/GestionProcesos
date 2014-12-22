@@ -1,0 +1,68 @@
+<div class="page-header">
+	<h1>Listado de Empleados</h1>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<div class="table-header-borde">&nbsp;</div>
+		<div>
+			<table id="dynamic-table"
+				class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th class="opciones-grid col-xs-3 col-lg-1" style="min-width: 130px;"><a
+							href="<?php echo $this->url('recursos', array('controller' => 'personal', 'action'=>'ingresar'));?>"
+							class="btn btn-sm btn-primary"> <i class="fa fa-plus-circle"></i>
+								<span class="hidden-xs">Nuevo</span>
+						</a></th>
+						<th>Cargo</th>
+						<th>Identificaci&oacute;n</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+						<th>Tel&eacute;fono</th>
+						<th>Celular</th>
+						<th>Sexo</th>
+						<th>Tipo</th>
+						<th>Alta</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php
+    foreach ($this->empleados as $empleados) :
+        ?>
+                 <tr>
+						<td class="iconos-ejecucion-grid"><a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'personal', 'action' => 'editar', 'id' => $empleados->getPer_id()))?>"><i
+								class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp; <a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'personal', 'action' => 'eliminar', 'id' => $empleados->getPer_id()))?>"
+							onclick="return eliminarRegistro('<?php echo $empleados->getPer_nombre() . ' ' . $empleados->getPer_apellido()?>');"><i
+								class="fa fa-trash-o"></i></a>&nbsp;&nbsp;&nbsp; <a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'personal', 'action' => 'eliminar', 'id' => $empleados->getPer_id()))?>"
+							onclick="return eliminarRegistro('<?php echo $empleados->getPer_nombre() . ' ' . $empleados->getPer_apellido()?>');"><i
+								class="fa fa-trash-o"></i></a>&nbsp;&nbsp;&nbsp; <a class="fa-lg"
+							href="<?php echo $this->url('recursos', array('controller' => 'personal', 'action' => 'eliminar', 'id' => $empleados->getPer_id()))?>"
+							onclick="return eliminarRegistro('<?php echo $empleados->getPer_nombre() . ' ' . $empleados->getPer_apellido()?>');"><i
+								class="fa fa-trash-o"></i></a></td>
+						<td><?php echo $this->escapeHtml($empleados->getCar_id());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_cedula_pasaporte()) . ' - ' . $this->escapeHtml($empleados->getPer_identificacion());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_nombre());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_apellido());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_email());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_telefono());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_celular());?></td>
+						<td><?php
+        $sexo = $this->escapeHtml($empleados->getPer_sexo());
+        echo $sexo == 'M' ? 'Masculino' : 'Femenino';
+        ?>              </td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_tipo());?></td>
+						<td><?php echo $this->escapeHtml($empleados->getPer_alta());?></td>
+					</tr>
+                 <?php endforeach; ?>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

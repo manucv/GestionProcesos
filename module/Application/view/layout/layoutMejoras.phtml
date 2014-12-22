@@ -1,0 +1,114 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+        <?php echo $this->headTitle('Sistema para la gestión de procesos ')?>
+
+        <?php
+        
+        echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge,chrome=1')?>
+
+        <!-- Le styles -->
+        <?php
+        
+        echo $this->headLink(array(
+            'rel' => 'shortcut icon',
+            'type' => 'image/vnd.microsoft.icon',
+            'href' => $this->basePath() . '/img/favicon.ico'
+        ))
+            
+         ->prependStylesheet($this->basePath() . '/css/style.css')
+        // ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+        // ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css')
+        
+        ->prependStylesheet($this->basePath() . '/assets/css/ace-ie.css', 'screen', 'lte IE 9')
+            ->prependStylesheet($this->basePath() . '/assets/css/ace-part2.css', 'screen', 'lte IE 9')
+            ->
+        // ace styles
+        prependStylesheet($this->basePath() . '/assets/css/ace.css')
+            ->
+        // text fonts
+        prependStylesheet($this->basePath() . '/assets/css/ace-fonts.css')
+            ->
+        // bootstrap & fontawesome
+        prependStylesheet($this->basePath() . '/assets/css/font-awesome.css')
+            ->prependStylesheet($this->basePath() . '/assets/css/bootstrap.css')?>
+
+                
+        <!-- Scripts -->
+        <?php
+        
+        echo $this->headScript()
+            ->
+        // ace settings handler
+        prependFile($this->basePath() . '/assets/js/ace-extra.js')
+            ->
+        // ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+        // ->prependFile($this->basePath() . '/js/jquery.min.js')
+        // ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        // ->prependFile($this->basePath() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        // HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries
+        prependFile($this->basePath() . '/assets/js/respond.js', 'text/javascript', array(
+            'conditional' => 'lt IE 8'
+        ))
+            ->prependFile($this->basePath() . '/assets/js/html5shiv.js', 'text/javascript', array(
+            'conditional' => 'lt IE 8'
+        ));
+        ?>
+        
+    </head>
+<body class="no-skin">
+
+	
+    <?php echo $this->partial('partial/slider')?>
+	<?php echo $this->partial('partial/header')?>
+
+	<!-- /section:basics/navbar.layout -->
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+		<?php
+echo $this->partial('partial/menuMejoras');
+
+?>
+
+		<!-- /section:basics/sidebar -->
+		<div class="main-content">
+			<div class="main-content-inner">
+                
+                <?php echo $this->partial('partial/navegacion')?>
+                
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<div class="page-header">
+						<h1>
+							Dashboard <small> <i class="ace-icon fa fa-angle-double-right"></i>
+								overview &amp; stats
+							</small>
+						</h1>
+					</div>
+					<!-- /.page-header -->
+                    <?php echo $this->content; ?>
+				</div>
+				<!-- /.page-content -->
+			</div>
+		</div>
+		<!-- /.main-content -->
+
+		<?php echo $this->partial('partial/footer')?>
+
+		<a href="#" id="btn-scroll-up"
+			class="btn-scroll-up btn btn-sm btn-inverse"> <i
+			class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+		</a>
+	</div>
+	<!-- /.main-container -->
+
+	<?php echo $this->partial('partial/basicScripts')?>
+    </body>
+</html>

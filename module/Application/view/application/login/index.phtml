@@ -1,0 +1,69 @@
+<?php if(!$this->loggedIn): ?>
+<?php 
+
+$form = $this->form;
+$form->prepare ()->setAttribute ( 'action', $this->url ( 'application', array (
+		'controller' => 'login',
+		'action' => 'autenticar'
+) ) )->setAttribute ( 'method', 'post' );
+$formLabel = $this->plugin ( 'formLabel' );
+
+echo $this->form()->openTag($form);
+
+?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-5">
+            <div class="row">
+                <div class="col-md-11 text-right">
+                    <img src="" />
+                </div>
+            </div>
+            <div class="text-left" style="font-weight: 700; font-size: 16px;">Escriba sus datos de acceso.</div>
+            <div><br /><br /></div>
+            <div class="row">
+                <div class="col-md-3 text-right">
+                    <?php //campo usuario
+            		$email = $form->get('usu_usuario');
+            		echo $formLabel->openTag().$email->getOption('label');
+            		echo $formLabel->closeTag();
+            	   ?>
+                </div>
+                <div class="col-md-9">
+        			<?php //campo usuario
+        			echo $this->forminput($email);
+        			echo $this->formelementerrors($email);
+        			?>
+        		</div>
+            </div>
+            <div><br /></div>
+            <div class="row">
+                <div class="col-md-3 text-right">
+                  <?php 
+                  $password = $form->get('usu_clave');
+                  echo $formLabel->openTag().$password->getOption('label');
+                  echo $formLabel->closeTag();
+                  ?>
+                </div>
+                <div class="col-md-9">
+        			<?php //campo password
+        			echo $this->forminput($password);
+        			echo $this->formelementerrors($password);
+        			?>
+        		</div>
+            </div>
+            <div><br /></div>
+            <div class="row">
+                <div class="col-md-7 text-right" style="padding-top: 10px;">
+        		  <a href="#" style="color: #000000; font-weight: 700;">&iquest;Olvid&oacute; su contrase&ntilde;a?</a>
+        		</div>
+                <div class="col-md-5 text-right">
+        		  <?php echo $this->formelement($form->get('ingresar')) ?>
+        		</div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $this->form()->closeTag() ?>
+
+<?php endif; ?>
